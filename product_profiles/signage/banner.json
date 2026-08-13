@@ -1,0 +1,47 @@
+{
+  "product_id": "banner",
+  "confirmed_product_id": "hyeonsumak_outdoor",
+  "category": "SIGNAGE",
+  "product_name": "현수막",
+  "status": "CONFIRMED_IN_V1_3_SEED",
+  "note": "이 상품은 production_engine/product_profiles.seed.json 의 'hyeonsumak_outdoor' 로 이미 확정 프로필이 존재합니다. 단, 그 수치도 v1.2 단계의 업계 관행 추정치였으므로(실제 URL 조사 결과 아님) 재검증이 필요합니다.",
+  "capabilities": [
+    "RECTANGULAR_PRINT",
+    "CMYK_OUTPUT",
+    "CUSTOM_SIZE",
+    "EYELET_FINISHING",
+    "EYELET"
+  ],
+  "production_status": "PARTIAL",
+  "needs_confirmation": true,
+  "unconfirmed_fields": [
+    "ALL_NUMERIC_VALUES (실제 URL 조사로 재검증 필요)"
+  ],
+  "source": {
+    "provider": "adpiamall",
+    "url": "https://www.adpiamall.com/estimate/goods2019/55",
+    "verified": true,
+    "verified_at": "2026-08-11",
+    "notes": "현수막 공식 범위 및 재단 500×500→작업 502×502 자료를 사용자로부터 확인. 사방 1mm 작업영역 적용. safe/아일렛 세부값은 미확정."
+  },
+  "related_products": [
+    "indoor_banner",
+    "outdoor_banner"
+  ],
+  "size_constraint_mode": "ROLL_ORIENTATION_FREE",
+  "verified_size_range": {
+    "minimum_mm": [
+      30,
+      30
+    ],
+    "maximum_roll_width_mm": 1800,
+    "maximum_length_mm": 49100,
+    "orientation_free": true
+  },
+  "working_size_rule": {
+    "type": "BLEED_EACH_EDGE",
+    "bleed_mm": 1,
+    "formula": "working = trim + 2mm per axis",
+    "verified": true
+  }
+}

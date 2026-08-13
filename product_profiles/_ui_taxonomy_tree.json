@@ -1,0 +1,120 @@
+{
+  "categories": [
+    {
+      "category_id": "SIGNAGE",
+      "label": "배너/사인",
+      "children": [
+        {
+          "product_id": "indoor_banner",
+          "label": "실내용배너"
+        },
+        {
+          "product_id": "outdoor_banner",
+          "label": "실외용배너"
+        },
+        {
+          "product_id": "banner",
+          "label": "현수막"
+        }
+      ]
+    },
+    {
+      "category_id": "ACRYLIC",
+      "label": "아크릴",
+      "children": [
+        {
+          "product_id": "acrylic_print",
+          "label": "아크릴인쇄"
+        },
+        {
+          "product_id": "acrylic_keyring",
+          "label": "아크릴키링"
+        },
+        {
+          "product_id": "acrylic_stand",
+          "label": "아크릴스탠드"
+        }
+      ]
+    },
+    {
+      "category_id": "BUTTON",
+      "label": "버튼",
+      "children": [
+        {
+          "product_id": "button",
+          "label": "버튼"
+        },
+        {
+          "product_id": "fabric_button",
+          "label": "패브릭버튼"
+        }
+      ]
+    },
+    {
+      "category_id": "STICKER",
+      "label": "스티커",
+      "children": [
+        {
+          "product_id": "epoxy_sticker",
+          "label": "에폭시스티커"
+        },
+        {
+          "product_id": "removable_sticker",
+          "label": "띠부스티커"
+        },
+        {
+          "product_id": "fabric_sticker",
+          "label": "패브릭스티커"
+        },
+        {
+          "product_id": "dtf_sticker",
+          "label": "DTF스티커"
+        },
+        {
+          "product_id": "vehicle_sticker",
+          "label": "차량스티커"
+        }
+      ]
+    },
+    {
+      "category_id": "LARGE_FORMAT",
+      "label": "실사출력",
+      "children": [
+        {
+          "product_id": "photo_paper",
+          "label": "실사출력 인화지"
+        },
+        {
+          "product_id": "magnetic_sheet",
+          "label": "실사출력 통자석"
+        },
+        {
+          "product_id": "vinyl_cutting",
+          "label": "실사출력 시트지컷팅"
+        }
+      ]
+    },
+    {
+      "category_id": "CARD",
+      "label": "카드/명함",
+      "children": [
+        {
+          "product_id": "standard_business_card",
+          "label": "일반지명함"
+        },
+        {
+          "product_id": "premium_business_card",
+          "label": "고급지명함"
+        },
+        {
+          "product_id": "digital_invitation",
+          "label": "디지털 청첩장"
+        },
+        {
+          "product_id": "transparent_hybrid_card",
+          "label": "투명하이브리드명함/투명포토카드"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "product_id": "outdoor_banner",
+  "confirmed_product_id": "outdoor_banner",
+  "category": "SIGNAGE",
+  "product_name": "실외용배너",
+  "status": "CONFIRMED_IN_V1_9_SEED",
+  "note": "이 상품은 v1.9에서 실제 제작사 공식 자료(PM GPT 확보)를 반영해 production_engine/product_profiles.seed.json 에 'outdoor_banner' 로 확정 프로필이 등록되었습니다. material/print_method/size_presets/stand_option 등은 검증되었으나, bleed_mm/min·max 자유입력범위/dpi_error_below 등은 여전히 미검증입니다 (seed.json 의 source.notes, verified_fields 참고).",
+  "capabilities": ["RECTANGULAR_PRINT", "CMYK_OUTPUT", "CUSTOM_SIZE", "EYELET"],
+  "production_status": "PARTIAL",
+  "needs_confirmation": true,
+  "unconfirmed_fields": ["bleed_mm", "min_width_mm", "max_width_mm", "min_height_mm", "max_height_mm", "dpi_error_below", "safe_margin_mm"],
+  "source": {
+    "provider": "제작사 공식 제작가이드 (PM GPT 확보 자료)",
+    "url": null,
+    "verified": true,
+    "verified_at": "2026-08-11",
+    "notes": "v1.9 PRODUCTION GUIDE 업데이트로 확정됨. 상세는 production_engine/product_profiles.seed.json 의 'outdoor_banner' 항목 참고."
+  },
+  "related_products": ["banner_indoor", "hyeonsumak_outdoor"]
+}
