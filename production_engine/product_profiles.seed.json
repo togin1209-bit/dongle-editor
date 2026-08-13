@@ -1,0 +1,777 @@
+{
+  "_comment": "이 파일은 MVP용 시드 데이터입니다. 운영 전환 시 product_profiles 테이블로 그대로 이관하십시오. 수치(bleed/safe_margin/dpi 임계값/아일렛 규격)는 업계 관행 기반 초안이며, 실제 인쇄소/제작 협의 후 반드시 재확인이 필요합니다.",
+  "profiles": [
+    {
+      "product_id": "banner_indoor",
+      "product_name": "실내 배너",
+      "category": "banner",
+      "width_mm": 600,
+      "height_mm": 1800,
+      "custom_size_allowed": true,
+      "min_width_mm": 400,
+      "max_width_mm": 1000,
+      "min_height_mm": 1200,
+      "max_height_mm": 2400,
+      "safe_zone": {
+        "bleed_mm": 1,
+        "safe_margin_mm": 15,
+        "extra_margin_by_edge_mm": {}
+      },
+      "dpi_warning_below": 300,
+      "dpi_error_below": 50,
+      "default_fit_policy": "contain",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "코팅",
+        "아일렛"
+      ],
+      "eyelet": {
+        "enabled": false,
+        "diameter_mm": 8,
+        "margin_mm": 15,
+        "interval_mm": 500,
+        "placement_policy": "NONE"
+      },
+      "related_products": [
+        "hyeonsumak_outdoor"
+      ],
+      "production_status": "PARTIAL",
+      "is_dev_default": false,
+      "source": {
+        "provider": "제작사 공식 제작가이드 (PM GPT 확보 자료)",
+        "url": null,
+        "verified": true,
+        "verified_at": "2026-08-11",
+        "notes": "material/print_method/finishing/stand_option/size_presets/bleed_mm/dpi_warning_below 는 실제 제작사 자료로 확인됨. min/max_width_mm·min/max_height_mm 은 제공된 프리셋 6종의 범위에서 유추한 값이며(자유입력 시 허용되는 공식 범위로 명시되지 않음), dpi_error_below(최소 허용 DPI)와 safe_margin_mm 은 여전히 v1.2 단계 추정치(미검증) 입니다. verified_fields 목록 참고."
+      },
+      "size_presets": [
+        {
+          "label": "600x1800",
+          "width_mm": 600,
+          "height_mm": 1800
+        },
+        {
+          "label": "600x1600",
+          "width_mm": 600,
+          "height_mm": 1600
+        },
+        {
+          "label": "400x1200",
+          "width_mm": 400,
+          "height_mm": 1200
+        },
+        {
+          "label": "500x1500",
+          "width_mm": 500,
+          "height_mm": 1500
+        },
+        {
+          "label": "800x2400",
+          "width_mm": 800,
+          "height_mm": 2400
+        },
+        {
+          "label": "1000x2400",
+          "width_mm": 1000,
+          "height_mm": 2400
+        }
+      ],
+      "material": "PET 210μ",
+      "print_method": "수성잉크 4색",
+      "stand_option_available": true,
+      "verified_fields": [
+        "material",
+        "print_method",
+        "custom_size_allowed",
+        "size_presets",
+        "safe_zone.bleed_mm",
+        "dpi_warning_below",
+        "finishing",
+        "stand_option_available",
+        "color_mode_target"
+      ]
+    },
+    {
+      "product_id": "hyeonsumak_outdoor",
+      "product_name": "옥외 현수막",
+      "category": "hyeonsumak",
+      "width_mm": 5000,
+      "height_mm": 900,
+      "custom_size_allowed": true,
+      "min_width_mm": 30,
+      "max_width_mm": 49100,
+      "min_height_mm": 30,
+      "max_height_mm": 1800,
+      "safe_zone": {
+        "bleed_mm": 1,
+        "safe_margin_mm": 40,
+        "extra_margin_by_edge_mm": {
+          "top": 50,
+          "bottom": 50,
+          "left": 30,
+          "right": 30
+        }
+      },
+      "dpi_warning_below": 150,
+      "dpi_error_below": 20,
+      "default_fit_policy": "contain",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "아일렛",
+        "각목마감"
+      ],
+      "eyelet": {
+        "enabled": true,
+        "diameter_mm": 8,
+        "margin_mm": 30,
+        "interval_mm": 500,
+        "placement_policy": "ALL_EDGES"
+      },
+      "related_products": [
+        "banner_indoor"
+      ],
+      "production_status": "PARTIAL",
+      "is_dev_default": false,
+      "source": {
+        "provider": "제작사 공식 제작가이드 (PM GPT 확보 자료)",
+        "url": null,
+        "verified": true,
+        "verified_at": "2026-08-11",
+        "notes": "사용자 제공 공식 제작가이드 확인: 현수막 재단사이즈 최소 30×30mm, 최대 1,800×49,100mm. 방향 독립 검증(짧은 변<=1,800, 긴 변<=49,100, 각 변>=30). 500×500 재단 → 502×502 작업으로 확인되어 사방 1mm 작업영역(가로/세로 +2mm)을 적용. 5000×900 AI Reference는 문서 기준 템플릿으로 보관하며 Export의 Trim/Working Box 계약과 별도 검증한다. safe_margin/아일렛 세부 수치는 여전히 미검증."
+      },
+      "size_presets": [
+        {
+          "label": "5000x900",
+          "width_mm": 5000,
+          "height_mm": 900
+        },
+        {
+          "label": "4000x900",
+          "width_mm": 4000,
+          "height_mm": 900
+        },
+        {
+          "label": "3000x900",
+          "width_mm": 3000,
+          "height_mm": 900
+        },
+        {
+          "label": "6000x900",
+          "width_mm": 6000,
+          "height_mm": 900
+        }
+      ],
+      "material": "현수막 150denier",
+      "print_method": "수성잉크 4색",
+      "verified_fields": [
+        "color_mode_target",
+        "custom_size_allowed",
+        "dpi_warning_below",
+        "finishing",
+        "material",
+        "max_height_mm",
+        "max_width_mm",
+        "min_height_mm",
+        "min_width_mm",
+        "print_method",
+        "safe_zone.bleed_mm",
+        "size_constraint_mode"
+      ],
+      "size_constraint_mode": "ROLL_ORIENTATION_FREE"
+    },
+    {
+      "product_id": "outdoor_banner",
+      "product_name": "실외용 배너",
+      "category": "banner",
+      "width_mm": 600,
+      "height_mm": 1800,
+      "custom_size_allowed": true,
+      "min_width_mm": 400,
+      "max_width_mm": 1000,
+      "min_height_mm": 1200,
+      "max_height_mm": 2400,
+      "safe_zone": {
+        "bleed_mm": 1,
+        "safe_margin_mm": 15,
+        "extra_margin_by_edge_mm": {}
+      },
+      "dpi_warning_below": 300,
+      "dpi_error_below": 50,
+      "default_fit_policy": "contain",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "코팅",
+        "아일렛"
+      ],
+      "eyelet": {
+        "enabled": false,
+        "diameter_mm": 8,
+        "margin_mm": 15,
+        "interval_mm": 500,
+        "placement_policy": "NONE"
+      },
+      "related_products": [
+        "banner_indoor",
+        "hyeonsumak_outdoor"
+      ],
+      "production_status": "PARTIAL",
+      "is_dev_default": false,
+      "material": "PET 210μ",
+      "print_method": "수성잉크 4색",
+      "stand_option_available": true,
+      "size_presets": [
+        {
+          "label": "600x1800",
+          "width_mm": 600,
+          "height_mm": 1800
+        },
+        {
+          "label": "600x1600",
+          "width_mm": 600,
+          "height_mm": 1600
+        },
+        {
+          "label": "400x1200",
+          "width_mm": 400,
+          "height_mm": 1200
+        },
+        {
+          "label": "500x1500",
+          "width_mm": 500,
+          "height_mm": 1500
+        },
+        {
+          "label": "800x2400",
+          "width_mm": 800,
+          "height_mm": 2400
+        },
+        {
+          "label": "1000x2400",
+          "width_mm": 1000,
+          "height_mm": 2400
+        }
+      ],
+      "verified_fields": [
+        "material",
+        "print_method",
+        "custom_size_allowed",
+        "size_presets",
+        "finishing",
+        "stand_option_available",
+        "dpi_warning_below",
+        "color_mode_target"
+      ],
+      "source": {
+        "provider": "제작사 공식 제작가이드 (PM GPT 확보 자료)",
+        "url": null,
+        "verified": true,
+        "verified_at": "2026-08-11",
+        "notes": "material/print_method/finishing/stand_option/size_presets/dpi_warning_below 는 실제 제작사 자료로 확인됨. bleed_mm(1mm)은 자료에 명시되지 않아 실내용배너(동일 소재 PET 210μ, 동일 제작사)의 확정값을 잠정 적용한 것이며 verified_fields 에는 포함하지 않았습니다 - 별도 재확인 필요. min/max_width_mm·min/max_height_mm 도 프리셋 4종 범위에서 유추한 값으로 자유입력 공식 범위는 아닙니다. 사용자 확인(2026-08-11): 실내용배너와 실외용배너의 제작 사이즈 프리셋은 완전히 동일함. 따라서 실외용에도 800×2400, 1000×2400을 포함한 6개 프리셋을 동일 적용. min/max는 프리셋 허용을 위한 UI 경계이며 자유사이즈 공식 최대/최소로 해석하지 않음."
+      }
+    },
+    {
+      "product_id": "button_32",
+      "product_name": "버튼 32mm",
+      "category": "button",
+      "width_mm": 32,
+      "height_mm": 32,
+      "custom_size_allowed": false,
+      "min_width_mm": 32,
+      "max_width_mm": 32,
+      "min_height_mm": 32,
+      "max_height_mm": 32,
+      "safe_zone": {
+        "bleed_mm": 6.25,
+        "safe_margin_mm": 2.0,
+        "extra_margin_by_edge_mm": {}
+      },
+      "dpi_warning_below": 300,
+      "dpi_error_below": 100,
+      "default_fit_policy": "cover",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "단면 인쇄",
+        "코팅 선택"
+      ],
+      "eyelet": {
+        "enabled": false,
+        "diameter_mm": 8,
+        "margin_mm": 15,
+        "interval_mm": 500,
+        "placement_policy": "NONE"
+      },
+      "related_products": [],
+      "production_status": "PARTIAL",
+      "is_dev_default": false,
+      "source": {
+        "provider": "사용자 제공 애드피아몰 버튼 제작가이드 캡처",
+        "url": "https://www.adpiamall.com/estimate/goods2019/30",
+        "verified": true,
+        "verified_at": "2026-08-11",
+        "notes": "재단 32×32mm / 작업 44.5×44.5mm. 300dpi 권장. 안전영역은 버튼 외곽에서 약 3mm 안쪽이라는 사용자 제공 가이드에 따라 UI 안내용 2mm를 보수적으로 사용; 실제 중요정보는 외곽 3mm 안쪽 배치 권장."
+      },
+      "size_presets": [],
+      "material": "유포지 150g",
+      "print_method": "수성잉크 4색",
+      "verified_fields": [
+        "width_mm",
+        "height_mm",
+        "safe_zone.bleed_mm",
+        "dpi_warning_below",
+        "color_mode_target",
+        "material",
+        "print_method"
+      ]
+    },
+    {
+      "product_id": "button_44",
+      "product_name": "버튼 44mm",
+      "category": "button",
+      "width_mm": 44,
+      "height_mm": 44,
+      "custom_size_allowed": false,
+      "min_width_mm": 44,
+      "max_width_mm": 44,
+      "min_height_mm": 44,
+      "max_height_mm": 44,
+      "safe_zone": {
+        "bleed_mm": 5.0,
+        "safe_margin_mm": 2.0,
+        "extra_margin_by_edge_mm": {}
+      },
+      "dpi_warning_below": 300,
+      "dpi_error_below": 100,
+      "default_fit_policy": "cover",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "단면 인쇄",
+        "코팅 선택"
+      ],
+      "eyelet": {
+        "enabled": false,
+        "diameter_mm": 8,
+        "margin_mm": 15,
+        "interval_mm": 500,
+        "placement_policy": "NONE"
+      },
+      "related_products": [],
+      "production_status": "PARTIAL",
+      "is_dev_default": false,
+      "source": {
+        "provider": "사용자 제공 애드피아몰 버튼 제작가이드 캡처",
+        "url": "https://www.adpiamall.com/estimate/goods2019/30",
+        "verified": true,
+        "verified_at": "2026-08-11",
+        "notes": "재단 44×44mm / 작업 54×54mm. 300dpi 권장. 안전영역은 버튼 외곽에서 약 3mm 안쪽이라는 사용자 제공 가이드에 따라 UI 안내용 2mm를 보수적으로 사용; 실제 중요정보는 외곽 3mm 안쪽 배치 권장."
+      },
+      "size_presets": [],
+      "material": "유포지 150g",
+      "print_method": "수성잉크 4색",
+      "verified_fields": [
+        "width_mm",
+        "height_mm",
+        "safe_zone.bleed_mm",
+        "dpi_warning_below",
+        "color_mode_target",
+        "material",
+        "print_method"
+      ]
+    },
+    {
+      "product_id": "button_58",
+      "product_name": "버튼 58mm",
+      "category": "button",
+      "width_mm": 58,
+      "height_mm": 58,
+      "custom_size_allowed": false,
+      "min_width_mm": 58,
+      "max_width_mm": 58,
+      "min_height_mm": 58,
+      "max_height_mm": 58,
+      "safe_zone": {
+        "bleed_mm": 6.0,
+        "safe_margin_mm": 2.0,
+        "extra_margin_by_edge_mm": {}
+      },
+      "dpi_warning_below": 300,
+      "dpi_error_below": 100,
+      "default_fit_policy": "cover",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "단면 인쇄",
+        "코팅 선택"
+      ],
+      "eyelet": {
+        "enabled": false,
+        "diameter_mm": 8,
+        "margin_mm": 15,
+        "interval_mm": 500,
+        "placement_policy": "NONE"
+      },
+      "related_products": [],
+      "production_status": "PARTIAL",
+      "is_dev_default": false,
+      "source": {
+        "provider": "사용자 제공 애드피아몰 버튼 제작가이드 캡처",
+        "url": "https://www.adpiamall.com/estimate/goods2019/30",
+        "verified": true,
+        "verified_at": "2026-08-11",
+        "notes": "재단 58×58mm / 작업 70×70mm. 300dpi 권장. 안전영역은 버튼 외곽에서 약 3mm 안쪽이라는 사용자 제공 가이드에 따라 UI 안내용 2mm를 보수적으로 사용; 실제 중요정보는 외곽 3mm 안쪽 배치 권장."
+      },
+      "size_presets": [],
+      "material": "유포지 150g",
+      "print_method": "수성잉크 4색",
+      "verified_fields": [
+        "width_mm",
+        "height_mm",
+        "safe_zone.bleed_mm",
+        "dpi_warning_below",
+        "color_mode_target",
+        "material",
+        "print_method"
+      ]
+    },
+    {
+      "product_id": "button_75",
+      "product_name": "버튼 75mm",
+      "category": "button",
+      "width_mm": 75,
+      "height_mm": 75,
+      "custom_size_allowed": false,
+      "min_width_mm": 75,
+      "max_width_mm": 75,
+      "min_height_mm": 75,
+      "max_height_mm": 75,
+      "safe_zone": {
+        "bleed_mm": 5.5,
+        "safe_margin_mm": 2.0,
+        "extra_margin_by_edge_mm": {}
+      },
+      "dpi_warning_below": 300,
+      "dpi_error_below": 100,
+      "default_fit_policy": "cover",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "단면 인쇄",
+        "코팅 선택"
+      ],
+      "eyelet": {
+        "enabled": false,
+        "diameter_mm": 8,
+        "margin_mm": 15,
+        "interval_mm": 500,
+        "placement_policy": "NONE"
+      },
+      "related_products": [],
+      "production_status": "PARTIAL",
+      "is_dev_default": false,
+      "source": {
+        "provider": "사용자 제공 애드피아몰 버튼 제작가이드 캡처",
+        "url": "https://www.adpiamall.com/estimate/goods2019/30",
+        "verified": true,
+        "verified_at": "2026-08-11",
+        "notes": "재단 75×75mm / 작업 86×86mm. 300dpi 권장. 안전영역은 버튼 외곽에서 약 3mm 안쪽이라는 사용자 제공 가이드에 따라 UI 안내용 2mm를 보수적으로 사용; 실제 중요정보는 외곽 3mm 안쪽 배치 권장."
+      },
+      "size_presets": [],
+      "material": "유포지 150g",
+      "print_method": "수성잉크 4색",
+      "verified_fields": [
+        "width_mm",
+        "height_mm",
+        "safe_zone.bleed_mm",
+        "dpi_warning_below",
+        "color_mode_target",
+        "material",
+        "print_method"
+      ]
+    },
+    {
+      "product_id": "acrylic_keyring",
+      "product_name": "아크릴키링",
+      "category": "acrylic",
+      "width_mm": 39,
+      "height_mm": 44,
+      "custom_size_allowed": true,
+      "min_width_mm": 20,
+      "max_width_mm": 100,
+      "min_height_mm": 42,
+      "max_height_mm": 100,
+      "safe_zone": {
+        "bleed_mm": 1,
+        "safe_margin_mm": 0,
+        "extra_margin_by_edge_mm": {}
+      },
+      "dpi_warning_below": 300,
+      "dpi_error_below": 300,
+      "default_fit_policy": "contain",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "cutline",
+        "white_ink",
+        "keyring_hole"
+      ],
+      "eyelet": {
+        "enabled": false,
+        "diameter_mm": 8.0,
+        "margin_mm": 20.0,
+        "interval_mm": 500.0,
+        "placement_policy": "NONE"
+      },
+      "capabilities": [
+        "CUTLINE_PRINT",
+        "WHITE_INK_PRINT",
+        "TRANSPARENT_MATERIAL",
+        "CMYK_OUTPUT",
+        "CUSTOM_SIZE"
+      ],
+      "related_products": [
+        "acrylic_stand"
+      ],
+      "production_status": "PARTIAL",
+      "source": {
+        "provider": "adpiamall",
+        "url": "https://www.adpiamall.com/estimate/goods2019/667",
+        "verified": true,
+        "verified_at": "2026-08-11",
+        "notes": "사용자 제공 공식 제작가이드 캡처 기준. 자유형: 재단 20×42~100×100mm, 작업은 재단보다 사방 1mm 여유. 타공 Ø3mm 이상, 외곽 두께 2mm."
+      },
+      "is_dev_default": false,
+      "size_presets": [
+        {
+          "label": "원형 39×44",
+          "width_mm": 39,
+          "height_mm": 44,
+          "work_width_mm": 41,
+          "work_height_mm": 46,
+          "image_width_mm": 35,
+          "image_height_mm": 35,
+          "variant": "CIRCLE"
+        },
+        {
+          "label": "사각형 39×44",
+          "width_mm": 39,
+          "height_mm": 44,
+          "work_width_mm": 41,
+          "work_height_mm": 46,
+          "image_width_mm": 35,
+          "image_height_mm": 35,
+          "variant": "SQUARE"
+        },
+        {
+          "label": "하트형 42×42",
+          "width_mm": 42,
+          "height_mm": 42,
+          "work_width_mm": 44,
+          "work_height_mm": 44,
+          "image_width_mm": 38,
+          "image_height_mm": 35,
+          "variant": "HEART"
+        }
+      ],
+      "material": "투명/펄 아크릴",
+      "print_method": "CMYK + 백색(K100) + 칼선(K100)",
+      "stand_option_available": false,
+      "verified_fields": [
+        "width_mm",
+        "height_mm",
+        "min_width_mm",
+        "max_width_mm",
+        "min_height_mm",
+        "max_height_mm",
+        "custom_size_allowed",
+        "recommended_dpi",
+        "color_mode",
+        "cutline_offset_mm",
+        "hole_diameter_mm",
+        "hole_edge_margin_mm",
+        "work_margin_mm"
+      ],
+      "cutline_offset_mm": 1.0,
+      "minimum_cut_radius_mm": null,
+      "hole_diameter_mm": 3.0,
+      "hole_edge_margin_mm": 3.5,
+      "material_thickness_mm": null,
+      "stand_tab_width_mm": null,
+      "stand_tab_height_mm": null,
+      "stand_slot_width_mm": null,
+      "stand_slot_clearance_mm": null,
+      "white_choke_mm": 0.0,
+      "white_spread_mm": 0.0,
+      "keyring_outer_wall_mm": 2.0,
+      "transparent_reverse_required": true,
+      "work_margin_mm": 1.0
+    },
+    {
+      "product_id": "acrylic_stand",
+      "product_name": "아크릴스탠드",
+      "category": "acrylic",
+      "width_mm": 60,
+      "height_mm": 80,
+      "custom_size_allowed": true,
+      "min_width_mm": 20,
+      "max_width_mm": 300,
+      "min_height_mm": 20,
+      "max_height_mm": 300,
+      "safe_zone": {
+        "bleed_mm": 1,
+        "safe_margin_mm": 0,
+        "extra_margin_by_edge_mm": {}
+      },
+      "dpi_warning_below": 300,
+      "dpi_error_below": 300,
+      "default_fit_policy": "contain",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "cutline",
+        "white_ink",
+        "stand_tab_slot"
+      ],
+      "eyelet": {
+        "enabled": false,
+        "diameter_mm": 8.0,
+        "margin_mm": 20.0,
+        "interval_mm": 500.0,
+        "placement_policy": "NONE"
+      },
+      "capabilities": [
+        "CUTLINE_PRINT",
+        "WHITE_INK_PRINT",
+        "TRANSPARENT_MATERIAL",
+        "CMYK_OUTPUT",
+        "CUSTOM_SIZE"
+      ],
+      "related_products": [
+        "acrylic_keyring"
+      ],
+      "production_status": "PARTIAL",
+      "source": {
+        "provider": "adpiamall",
+        "url": "https://www.adpiamall.com/estimate/goods2019/840",
+        "verified": true,
+        "verified_at": "2026-08-11",
+        "notes": "사용자 제공 아크릴스탠드 제작가이드 캡처 반영. 파츠 수와 받침대 홈 수는 1:1 자동 동기화. 끼움부 세부 공차 수치는 화면에서 조정 가능하며 추정값으로 VERIFIED 처리하지 않음."
+      },
+      "is_dev_default": false,
+      "size_presets": [],
+      "material": "아크릴 스탠드",
+      "print_method": "CMYK + 백색(K100) + 칼선(K100)",
+      "stand_option_available": true,
+      "verified_fields": [
+        "custom_size_allowed",
+        "recommended_dpi",
+        "color_mode",
+        "part_slot_sync",
+        "cutline_offset_mm"
+      ],
+      "cutline_offset_mm": 1.0,
+      "minimum_cut_radius_mm": null,
+      "hole_diameter_mm": null,
+      "hole_edge_margin_mm": null,
+      "material_thickness_mm": null,
+      "stand_tab_width_mm": null,
+      "stand_tab_height_mm": null,
+      "stand_slot_width_mm": null,
+      "stand_slot_clearance_mm": null,
+      "white_choke_mm": 0.0,
+      "white_spread_mm": 0.0,
+      "transparent_reverse_required": true,
+      "work_margin_mm": 1.0
+    },
+    {
+      "product_id": "acrylic_print",
+      "product_name": "아크릴인쇄",
+      "category": "acrylic",
+      "width_mm": 210,
+      "height_mm": 148,
+      "custom_size_allowed": true,
+      "min_width_mm": 20,
+      "max_width_mm": 1150,
+      "min_height_mm": 50,
+      "max_height_mm": 2300,
+      "safe_zone": {
+        "bleed_mm": 1,
+        "safe_margin_mm": 0,
+        "extra_margin_by_edge_mm": {}
+      },
+      "dpi_warning_below": 300,
+      "dpi_error_below": 300,
+      "default_fit_policy": "contain",
+      "color_mode_target": "CMYK",
+      "icc_profile_name": null,
+      "pdf_standard": "PDF/X-1a",
+      "finishing": [
+        "cutline",
+        "white_ink"
+      ],
+      "eyelet": {
+        "enabled": false,
+        "diameter_mm": 8.0,
+        "margin_mm": 20.0,
+        "interval_mm": 500.0,
+        "placement_policy": "NONE"
+      },
+      "capabilities": [
+        "CUTLINE_PRINT",
+        "WHITE_INK_PRINT",
+        "TRANSPARENT_MATERIAL",
+        "CMYK_OUTPUT",
+        "CUSTOM_SIZE"
+      ],
+      "related_products": [
+        "acrylic_keyring",
+        "acrylic_stand"
+      ],
+      "production_status": "PARTIAL",
+      "source": {
+        "provider": "adpiamall / 사용자 제공 공식 제작가이드 캡처",
+        "url": "https://www.adpiamall.com/estimate/goods2019/265",
+        "verified": true,
+        "verified_at": "2026-08-12",
+        "notes": "아크릴인쇄 제작가이드 캡처 반영. 작업사이즈는 재단보다 사방 1mm(총 2mm) 크게. 사각/모양재단 및 투명 아크릴 배면인쇄 규칙 반영."
+      },
+      "is_dev_default": false,
+      "size_presets": [],
+      "material": "아크릴 2/3/5/10/15/20mm",
+      "print_method": "CMYK + 백색(K100), 모양재단 시 칼선(K100)",
+      "stand_option_available": false,
+      "verified_fields": [
+        "custom_size_allowed",
+        "recommended_dpi",
+        "color_mode",
+        "part_slot_sync",
+        "cutline_offset_mm"
+      ],
+      "cutline_offset_mm": 1.0,
+      "minimum_cut_radius_mm": null,
+      "hole_diameter_mm": null,
+      "hole_edge_margin_mm": null,
+      "material_thickness_mm": null,
+      "stand_tab_width_mm": null,
+      "stand_tab_height_mm": null,
+      "stand_slot_width_mm": null,
+      "stand_slot_clearance_mm": null,
+      "white_choke_mm": 0.0,
+      "white_spread_mm": 0.0,
+      "transparent_reverse_required": true,
+      "work_margin_mm": 1.0
+    }
+  ]
+}
